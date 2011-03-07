@@ -314,3 +314,5 @@ endfunction
 
 "spell check when writing commit logs
 autocmd filetype svn,*commit* set spell
+
+color blackbeauty_plux
