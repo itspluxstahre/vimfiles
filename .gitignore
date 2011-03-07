@@ -4,4 +4,5 @@ tags
 .VimballRecord
 undofiles/*
 projects/*
+bundles/*
 .netrwhist
