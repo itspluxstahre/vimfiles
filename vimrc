@@ -315,4 +315,10 @@ endfunction
 "spell check when writing commit logs
 autocmd filetype svn,*commit* set spell
 
+"Vala support
+autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
+autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
+au BufRead,BufNewFile *.vala            setfiletype vala
+au BufRead,BufNewFile *.vapi            setfiletype vala
+
 color blackbeauty_plux
