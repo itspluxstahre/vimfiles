@@ -321,4 +321,7 @@ autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
 au BufRead,BufNewFile *.vala            setfiletype vala
 au BufRead,BufNewFile *.vapi            setfiletype vala
 
+set background=dark
+set syntax=on
+
 color blackbeauty_plux
