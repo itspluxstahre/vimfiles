@@ -324,4 +324,4 @@ au BufRead,BufNewFile *.vapi            setfiletype vala
 set background=dark
 set syntax=on
 
-color blackbeauty_plux
+color ir_black
