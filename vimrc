@@ -2,10 +2,6 @@
 "This must be first, because it changes other options as a side effect.
 set nocompatible
 
-"activate pathogen
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -15,12 +11,13 @@ set history=1000
 set showcmd     "show incomplete cmds down the bottom
 set showmode    "show current mode down the bottom
 
-set number      "show line numbers
+set background=dark
+set number              "show line numbers
+set virtualedit=all     "allow the cursor to move in a more sane way
 
 "display tabs and trailing spaces
 set list
 set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
-
 
 set incsearch   "find the next match as we type the search
 set hlsearch    "hilight searches by default
@@ -101,10 +98,6 @@ set statusline+=%*
 set statusline+=%{StatuslineTrailingSpaceWarning()}
 
 set statusline+=%{StatuslineLongLineWarning()}
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 "display a warning if &paste is set
 set statusline+=%#error#
@@ -243,34 +236,6 @@ function! s:Median(nums)
     endif
 endfunction
 
-"syntastic settings
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=2
-
-"snipmate settings
-let g:snips_author = "Martin Grenfell"
-
-"taglist settings
-let Tlist_Compact_Format = 1
-let Tlist_Enable_Fold_Column = 0
-let Tlist_Exit_OnlyWindow = 0
-let Tlist_WinWidth = 35
-let tlist_php_settings = 'php;c:class;f:Functions'
-let Tlist_Use_Right_Window=1
-let Tlist_GainFocus_On_ToggleOpen = 1
-let Tlist_Display_Tag_Scope = 1
-let Tlist_Process_File_Always = 1
-let Tlist_Show_One_File = 1
-
-"nerdtree settings
-let g:NERDTreeMouseMode = 2
-let g:NERDTreeWinSize = 40
-
-"explorer mappings
-nnoremap <f1> :BufExplorer<cr>
-nnoremap <f2> :NERDTreeToggle<cr>
-nnoremap <f3> :TlistToggle<cr>
-
 "source project specific config files
 runtime! projects/**/*.vim
 
@@ -321,7 +286,4 @@ autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
 au BufRead,BufNewFile *.vala            setfiletype vala
 au BufRead,BufNewFile *.vapi            setfiletype vala
 
-set background=dark
-set syntax=on
-set virtualedit=all
-color blackbeauty_plux
+"color blackbeauty_plux
