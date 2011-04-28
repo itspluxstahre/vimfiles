@@ -2,6 +2,10 @@
 "This must be first, because it changes other options as a side effect.
 set nocompatible
 
+"activate pathogen
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -105,6 +109,7 @@ set statusline+=%{&paste?'[paste]':''}
 set statusline+=%*
 
 set statusline+=%=      "left/right separator
+set statusline+=%{fugitive#statusline()} 
 set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
@@ -286,4 +291,4 @@ autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
 au BufRead,BufNewFile *.vala            setfiletype vala
 au BufRead,BufNewFile *.vapi            setfiletype vala
 
-"color blackbeauty_plux
+colorscheme xoria256
