@@ -109,7 +109,7 @@ set statusline+=%{&paste?'[paste]':''}
 set statusline+=%*
 
 set statusline+=%=      "left/right separator
-set statusline+=%{fugitive#statusline()} 
+set statusline+=%{fugitive#statusline()}
 set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
@@ -292,3 +292,7 @@ au BufRead,BufNewFile *.vala            setfiletype vala
 au BufRead,BufNewFile *.vapi            setfiletype vala
 
 colorscheme xoria256
+
+" Remove any traling whitespace laying around
+:nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
